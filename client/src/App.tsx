@@ -18,7 +18,7 @@ function App() {
       </div>
       <h1>Vite + React + Docker + JEPC + cambios</h1>
       <h1>Mis cambios</h1>
-      <h1>Mas cambiosV6</h1>
+      <h1>Mas cambiosV7</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
