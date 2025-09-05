@@ -1,0 +1,15 @@
+FROM node:18
+
+WORKDIR /app
+
+# Instalar dependencias
+COPY package*.json ./
+RUN npm install -g nodemon && npm install
+
+# Copiar código fuente
+COPY . .
+
+EXPOSE 4000
+
+# Ejecutar en modo desarrollo con nodemon
+CMD ["nodemon", "--legacy-watch", "src/index.js"]

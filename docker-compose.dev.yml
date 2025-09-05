@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules   # evita sobrescribir node_modules
+    working_dir: /app
+    command: npm run dev    # usar nodemon o similar
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev    # vite con hot reload
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - server
