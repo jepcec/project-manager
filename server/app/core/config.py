@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 30
 
     # Nueva forma de definir configuración
-    model_config = SettingsConfigDict(env_file="../../.env")
+    model_config = SettingsConfigDict(env_file=".env")
 
     # Construye automáticamente la URL de conexión
     @property
