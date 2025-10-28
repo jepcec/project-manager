@@ -35,4 +35,12 @@ app = FastAPI(
 )
 
 
+@app.get("/info")
+async def root():
+    """
+    ruta raiz
+    """
+    return {
+        "message":"Api sistema de de administracion de archivos"
+    }
 
