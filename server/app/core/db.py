@@ -24,6 +24,9 @@ session = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
 
 def get_db():
+    """
+    obtener sesion de db 
+    """
     db = session()
     try:
         yield db
