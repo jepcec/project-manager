@@ -30,7 +30,7 @@ class Proyecto(Base):
         back_populates="proyectos"
     )
 
-    arhivos_proyectos = relationship(
+    archivos_proyectos = relationship(
         "ArchivoProyecto",
         back_populates="proyectos"
     )

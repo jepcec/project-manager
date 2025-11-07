@@ -8,11 +8,11 @@ from core.db import engine
 app = FastAPI()
 
 # ============================= ROUTES ============================
-from routes import health
+from routes import health, usuario
 app.include_router(health.router)
+app.include_router(usuario.router)
 
-
-
+# ============================ MODELOS ============================
 from models import *
 from core.base import Base
 

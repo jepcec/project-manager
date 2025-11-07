@@ -11,4 +11,9 @@ class ArchivoTarea(Base):
     tipo = Column(String(20), nullable=False)
     ruta = Column(String(500), nullable=False)
 
+    tarea_id = Column(Integer, ForeignKey("tareas.id"), nullable=False)
+    tareas = relationship(
+        "Tarea",
+        back_populates="archivos_tareas"
+    )
     

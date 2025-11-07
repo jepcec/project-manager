@@ -24,5 +24,3 @@ class Usuario(Base):
         secondary=tarea_usuarios,
         back_populates="usuarios"
     )
-
-
