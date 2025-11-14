@@ -1,5 +1,7 @@
 import CustomButton from "../components/custom_button"
 import ProjectList from "../components/project_list"
+
+import Project from "../components/project"
 function Home()
 {
     return(
@@ -9,7 +11,7 @@ function Home()
                 <ProjectList/>
             </aside>
             <main className="flex-1 p-4 bg-green-400">
-                <p>Contenido principal</p>
+                <Project/>
             </main>
         </div>
     )
