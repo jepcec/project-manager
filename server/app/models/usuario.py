@@ -10,7 +10,7 @@ class Usuario(Base):
     nombre_completo = Column(String(500))
     email = Column(String(500))
     password = Column(String(500))
-    telefono = Column(Integer)
+    telefono = Column(Integer,nullable=True)
     es_admin = Column(Boolean, default=False)
 
     proyectos = relationship(

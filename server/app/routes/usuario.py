@@ -5,9 +5,10 @@ from models import Usuario
 from core.db import get_db
 router = APIRouter()
 
-@router.post("/t-crear",response_model=usuario.UsuarioBase)
+@router.post("/register",response_model=usuario.UsuarioBase)
 def crear_usuario(usuario: usuario.UsuarioCrear, db: Session = Depends(get_db)):
-    db_usuario = Usuario(nombre_completo = usuario.nombre_completo, email = usuario.email, password = usuario.password,telefono = usuario.telefono, es_admin = usuario.es_admin)
+    print(usuario)
+    db_usuario = Usuario(nombre_completo = usuario.nombre_completo, email = usuario.email, password = usuario.password,telefono = usuario.telefono,es_admin = False) #, es_admin = usuario.es_admin
     db.add(db_usuario)
     db.commit()
     db.refresh(db_usuario)

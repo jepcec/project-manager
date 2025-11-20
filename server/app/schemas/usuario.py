@@ -8,8 +8,6 @@ class UsuarioBase(BaseModel):
     telefono: Optional[int] = None 
     es_admin: bool = False
 
-
-
 class UsuarioCrear(UsuarioBase):
     pass
 
@@ -17,4 +15,3 @@ class UsuarioResponse(UsuarioBase):
     id: int
     class Config:
         orm_model = True
-        
